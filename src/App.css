@@ -11,3 +11,12 @@ body {
 }
 
 /* Add your own custom styles here */
+nav {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  gap: 10px;
+}
+.spacer {
+  flex-grow: 1;
+}

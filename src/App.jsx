@@ -1,10 +1,14 @@
 function App() {
   return (
     <div>
-      <h1>
+      <nav>
         <img id="logo-image" src="books.png" />
-        Library App
-      </h1>
+        <a href="#">Welcome</a>
+        <div className="spacer"></div>
+        <a href="#">Books</a>
+        <a href="#">Log In</a>
+      </nav>
+      <h1>List of Books</h1>
 
       <p>
         Complete the React components needed to allow users to browse a library
