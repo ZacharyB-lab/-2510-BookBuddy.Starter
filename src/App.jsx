@@ -1,6 +1,6 @@
 function App() {
   return (
-    <div>
+    <div className="app">
       <nav>
         <img id="logo-image" src="books.png" />
         <a href="#">Welcome</a>
@@ -9,6 +9,10 @@ function App() {
         <a href="#">Log In</a>
       </nav>
       <h1>List of Books</h1>
+      <div>
+        <input placeholder="Search for a book..."></input>
+        <button>Search</button>
+      </div>
 
       <p>
         Complete the React components needed to allow users to browse a library

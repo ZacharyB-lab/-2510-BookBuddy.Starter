@@ -11,6 +11,10 @@ body {
 }
 
 /* Add your own custom styles here */
+.app {
+  max-width: 500px;
+  margin: 0 auto;
+}
 nav {
   display: flex;
   align-items: center;
