@@ -1,3 +1,5 @@
+import { Book } from "./Book";
+
 function App() {
   return (
     <div className="app">
@@ -13,6 +15,8 @@ function App() {
         <input placeholder="Search for a book..."></input>
         <button>Search</button>
       </div>
+      <Book title="Harry Potter" />
+      <Book title="Harry Potter 2" />
 
       <p>
         Complete the React components needed to allow users to browse a library
