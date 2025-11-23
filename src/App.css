@@ -20,6 +20,8 @@ nav {
   align-items: center;
   flex-direction: row;
   gap: 10px;
+  border-bottom: 2px solid white;
+  padding-bottom: 5px;
 }
 .spacer {
   flex-grow: 1;
