@@ -24,6 +24,7 @@ nav {
   border-bottom: 2px solid white;
   padding-bottom: 5px;
 }
+
 .spacer {
   flex-grow: 1;
 }
@@ -31,12 +32,18 @@ nav {
 #book-image {
   width: 100px;
   margin-right: 10px;
+  margin-left: 5px;
+  margin-top: 5px;
+  margin-bottom: 5px;
 }
 
 .singlebook {
+  margin-top: 10px;
+  margin-bottom: 10px;
   display: flex;
   flex-direction: row;
   background-color: gray;
+  max-width: 500px;
 }
 
 .title {

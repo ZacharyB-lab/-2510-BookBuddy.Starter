@@ -5,10 +5,10 @@ function App() {
     <div className="app">
       <nav>
         <img id="logo-image" src="books.png" />
-        <a href="home">Welcome</a>
+        <a href="#">Welcome</a>
         <div className="spacer"></div>
-        <a href="list">Books</a>
-        <a href="login">Log In</a>
+        <a href="#">Books</a>
+        <a href="Login.jsx">Log In</a>
       </nav>
       <h1>List of Books</h1>
       <div>
@@ -22,25 +22,19 @@ function App() {
             <Book title="Harry Potter" />
           </div>
           <div className="author">JK Rowling</div>
-          <div>Here's a description</div>
+          <div>
+            Here's a description that's of course very long. JK Rowling is a
+            horrible person that doesn't truly deserve any of the acclaims that
+            she has earned.
+          </div>
         </div>
       </div>
 
-      <p>
-        Complete the React components needed to allow users to browse a library
-        catalog, check out books, review their account, and return books that
-        they've finished reading.
-      </p>
+      <p></p>
 
-      <p>
-        You may need to use some state in this top-level component in other
-        components that need to know if a user has logged in or not.
-      </p>
+      <p></p>
 
-      <p>
-        Don't forget to set up React Router to navigate between the different
-        views of your single page application!
-      </p>
+      <p></p>
     </div>
   );
 }
