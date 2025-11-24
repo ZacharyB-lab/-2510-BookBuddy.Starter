@@ -5,18 +5,26 @@ function App() {
     <div className="app">
       <nav>
         <img id="logo-image" src="books.png" />
-        <a href="#">Welcome</a>
+        <a href="home">Welcome</a>
         <div className="spacer"></div>
-        <a href="#">Books</a>
-        <a href="#">Log In</a>
+        <a href="list">Books</a>
+        <a href="login">Log In</a>
       </nav>
       <h1>List of Books</h1>
       <div>
         <input placeholder="Search for a book..."></input>
         <button>Search</button>
       </div>
-      <Book title="Harry Potter" />
-      <Book title="Harry Potter 2" />
+      <div className="singlebook">
+        <img id="book-image" src="books.png" />
+        <div className="information">
+          <div className="title">
+            <Book title="Harry Potter" />
+          </div>
+          <div className="author">JK Rowling</div>
+          <div>Here's a description</div>
+        </div>
+      </div>
 
       <p>
         Complete the React components needed to allow users to browse a library
