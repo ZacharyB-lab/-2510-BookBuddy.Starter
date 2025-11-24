@@ -1,4 +1,4 @@
-function Register() {
+/*function Register() {
   return (
     <div className="app">
       <nav>
@@ -35,7 +35,7 @@ function Register() {
   );
 }
 
-export default Register;
+export default Register;*/
 
 /*import { useState } from "react";
 import { Link, useNavigate } from "react-router";
