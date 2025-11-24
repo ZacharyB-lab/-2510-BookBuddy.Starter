@@ -3,9 +3,9 @@ function Login() {
     <div className="app">
       <nav>
         <img id="logo-image" src="books.png" />
-        <a href="App.jsx">Welcome</a>
+        <a href="/app">Welcome</a>
         <div className="spacer"></div>
-        <a href="App.jsx">Books</a>
+        <a href="list">Books</a>
         <a href="#">Log In</a>
       </nav>
       <h1>Log in to your account</h1>

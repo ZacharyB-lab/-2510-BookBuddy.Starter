@@ -1,14 +1,15 @@
 import { Book } from "./Book";
+const API = "https://fsa-book-buddy-b6e748d1380d.herokuapp.com/api";
 
 function App() {
   return (
     <div className="app">
       <nav>
         <img id="logo-image" src="books.png" />
-        <a href="#">Welcome</a>
+        <a href="/home">Welcome</a>
         <div className="spacer"></div>
         <a href="#">Books</a>
-        <a href="Login.jsx">Log In</a>
+        <a href="/login">Log In</a>
       </nav>
       <h1>List of Books</h1>
       <div>
@@ -24,17 +25,62 @@ function App() {
           <div className="author">JK Rowling</div>
           <div>
             Here's a description that's of course very long. JK Rowling is a
-            horrible person that doesn't truly deserve any of the acclaims that
-            she has earned.
+            horrible person that doesn't truly deserve any of the fame and
+            acclaims that she has earned.
           </div>
         </div>
       </div>
 
-      <p></p>
+      <p>
+        <div className="singlebook">
+          <img id="book-image" src="books.png" />
+          <div className="information">
+            <div className="title">
+              <Book title="Harry Potter" />
+            </div>
+            <div className="author">JK Rowling</div>
+            <div>
+              Here's a description that's of course very long. JK Rowling is a
+              horrible person that doesn't truly deserve any of the fame and
+              acclaims that she has earned.
+            </div>
+          </div>
+        </div>
+      </p>
 
-      <p></p>
+      <p>
+        <div className="singlebook">
+          <img id="book-image" src="books.png" />
+          <div className="information">
+            <div className="title">
+              <Book title="Harry Potter" />
+            </div>
+            <div className="author">JK Rowling</div>
+            <div>
+              Here's a description that's of course very long. JK Rowling is a
+              horrible person that doesn't truly deserve any of the fame and
+              acclaims that she has earned.
+            </div>
+          </div>
+        </div>
+      </p>
 
-      <p></p>
+      <p>
+        <div className="singlebook">
+          <img id="book-image" src="books.png" />
+          <div className="information">
+            <div className="title">
+              <Book title="Harry Potter" />
+            </div>
+            <div className="author">JK Rowling</div>
+            <div>
+              Here's a description that's of course very long. JK Rowling is a
+              horrible person that doesn't truly deserve any of the fame and
+              acclaims that she has earned.
+            </div>
+          </div>
+        </div>
+      </p>
     </div>
   );
 }
