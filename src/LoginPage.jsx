@@ -27,4 +27,7 @@ export function LoginPage() {
   <div>
     <LoginForm />
   </div>;
+  <div>
+    <Link to="/register">Need an account? Register here</Link>
+  </div>;
 }

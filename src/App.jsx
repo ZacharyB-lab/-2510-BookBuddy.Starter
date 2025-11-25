@@ -3,13 +3,39 @@ import { HomePage } from "./HomePage";
 import { RegisterPage } from "./RegisterPage";
 import { LoginPage } from "./LoginPage";
 import LoginForm from "./LoginForm";
+import { useState, useEffect } from "react";
+import axios from "axios";
 
 function App() {
+  const [user, setUser] = useState({});
+
+  const authenticate = async () => {
+    try {
+      const { data } = await axios.get(
+        "https://fsa-book-buddy-b6e748d1380d.herokuapp.com/api/me",
+        {
+          headers: {
+            Authorization: `${window.localStorage.getItem("token")}`,
+          },
+        }
+      );
+
+      console.log(data);
+      setUser(data);
+    } catch (error) {
+      console.error(error);
+    }
+  };
+
+  useEffect(() => {
+    authenticate();
+  }, [user.id]);
+
   return (
     <div className="app">
       <nav>
         <img id="logo-image" src="books.png" />
-        <Link to="/">Welcome</Link>
+        <Link to="/">Welcome </Link>
         <div className="spacer"></div>
         <Link to="/">Books</Link>
         <Link to="/login">Log In</Link>
@@ -20,11 +46,21 @@ function App() {
         <Route path="register" element={<RegisterPage />} />
         <Route path="login" element={<LoginPage />} />
       </Routes>
+
       <div>
         <LoginForm />
       </div>
     </div>
   );
 }
+//<div>
+// {user.id ? (
+//    <Welcome user={user} setUser={setUser} />
+//  ) : (
+//    <div>
+//      <h1>Please Login!</h1>
+//        <LoginForm/>
+//    </div>;
+//      )}
 
 export default App;

@@ -1,4 +1,5 @@
 import { Link } from "react-router";
+import RegisterForm from "./RegisterForm";
 
 export function RegisterPage() {
   /* Test Code
@@ -64,7 +65,7 @@ export default function Register() {
         <button>Register</button>
         {error && <p role="alert">{error}</p>}
       </form>
-      <Link to="/login">Already have an account? Log in here.</Link>
     </>
   );
 }
+//<Link to="/login">Already have an account? Log in here.</Link>

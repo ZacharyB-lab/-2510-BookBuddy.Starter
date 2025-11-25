@@ -1,10 +1,12 @@
 import axios from "axios";
 
-const LoginForm = () => {
-  const login = async (formData) => {
+const RegisterForm = () => {
+  const register = async (formData) => {
     const email = formData.get("email");
+    const username = formData.get("username");
     const password = formData.get("password");
     const user = {
+      username,
       email,
       password,
     };
@@ -21,7 +23,13 @@ const LoginForm = () => {
   };
 
   return (
-    <form action={login}>
+    <form action={register}>
+      <div>
+        <label>
+          Username:
+          <input type="text" name="username" />
+        </label>
+      </div>
       <div>
         <label>
           Email:
@@ -34,16 +42,9 @@ const LoginForm = () => {
           <input type="password" name="password" />
         </label>
       </div>
-      <button type="submit"> Login </button>
+      <button type="submit"> Register </button>
     </form>
   );
 };
 
-export default LoginForm;
-
-/* Log Out Button Code:
-  Place this code under the declared component:
-    const logOut = () => {
-      setUser({});
-      };
-<button onClick={() => {logOut()}}>Log Out</button> */
+export default RegisterForm;
