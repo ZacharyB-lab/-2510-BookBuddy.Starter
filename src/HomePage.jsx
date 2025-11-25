@@ -1,4 +1,4 @@
-import { Book } from "./Book";
+import { Book } from "./Book/Book";
 
 export function HomePage() {
   return (

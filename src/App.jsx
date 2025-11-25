@@ -2,6 +2,7 @@ import { Route, Routes, Link } from "react-router";
 import { HomePage } from "./HomePage";
 import { RegisterPage } from "./RegisterPage";
 import { LoginPage } from "./LoginPage";
+import LoginForm from "./LoginForm";
 
 function App() {
   return (
@@ -19,6 +20,9 @@ function App() {
         <Route path="register" element={<RegisterPage />} />
         <Route path="login" element={<LoginPage />} />
       </Routes>
+      <div>
+        <LoginForm />
+      </div>
     </div>
   );
 }

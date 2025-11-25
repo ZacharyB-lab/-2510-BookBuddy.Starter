@@ -1,5 +1,8 @@
 import { Link } from "react-router";
+import LoginForm from "./LoginForm";
+
 export function LoginPage() {
+  /* Test Code
   return (
     <div>
       <div className="app">
@@ -20,5 +23,8 @@ export function LoginPage() {
         </div>
       </div>
     </div>
-  );
+  ); */
+  <div>
+    <LoginForm />
+  </div>;
 }
