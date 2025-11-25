@@ -2,7 +2,7 @@
 import { Link, useNavigate } from "react-router";
 
 import { useAuth } from "./AuthContext";
-*/
+
 /** A form that allows users to register for a new account */
 /*export default function Register() {
   const { register } = useAuth();
@@ -41,4 +41,4 @@ import { useAuth } from "./AuthContext";
       <Link to="/login">Already have an account? Log in here.</Link>
     </>
   );
-} */
+}*/
