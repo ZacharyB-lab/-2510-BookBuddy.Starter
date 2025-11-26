@@ -12,10 +12,10 @@ function App() {
   const authenticate = async () => {
     try {
       const { data } = await axios.get(
-        "https://fsa-book-buddy-b6e748d1380d.herokuapp.com/api/me",
+        "https://fsa-book-buddy-b6e748d1380d.herokuapp.com/api/users/me",
         {
           headers: {
-            Authorization: `${window.localStorage.getItem("token")}`,
+            Authorization: `Bearer ${window.localStorage.getItem("token")}`,
           },
         }
       );
