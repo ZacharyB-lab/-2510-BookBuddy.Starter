@@ -1,13 +1,8 @@
-import { useParams, Link, useNavigate } from "react-router";
+import { useParams, Link } from "react-router";
 
-function SingleBook({ books, deleteBook, user }) {
+function SingleBook({ books }) {
   const { id } = useParams();
-  const navigate = useNavigate();
 
-  const deleteAndNav = (id) => {
-    deleteBook(id);
-    navigate("/books");
-  };
   const singleBook = books.find((book) => {
     return book.id === id * 1;
   });
@@ -18,21 +13,12 @@ function SingleBook({ books, deleteBook, user }) {
 
   return (
     <div className="singleBook">
-      <h2>{singleBook.name}</h2>
+      <h2>{singleBook.title}</h2>
+      <p>{singleBook.author}</p>
       <p>{singleBook.description}</p>
-      <p>Price: {singleBook.price}</p>
-      <p>Rating: {singleBook.rating}/5</p>
-      <img src={singleBook.image} />
-      <button
-        onClick={() => {
-          deleteAndNav(singleBook.id);
-        }}
-        disabled={user.id ? false : true}
-      >
-        Delete Book
-      </button>
+      <img src={singleBook.coverimage} />
       <div>
-        <Link to="/allBooks">Back to all Books</Link>
+        <Link to="/">Back to all Books</Link>
       </div>
     </div>
   );

@@ -29,13 +29,16 @@ export function HomePage({ books }) {
   // );
   return (
     <div>
+      <h1>List of Books</h1>
+      <div>
+        <input placeholder="Search for a book..."></input>
+        <button>Search</button>
+      </div>
       <div className="booksContainer">
         {books.map((book) => {
           return (
             <div className="book" key={book.id}>
-              <Link
-                to={`https://fsa-book-buddy-b6e748d1380d.herokuapp.com/api/books/${book.id}`}
-              >
+              <Link to={`/singleBook/${book.id}`}>
                 <h1>{book.title}</h1>
               </Link>
               <p>{book.author}</p>

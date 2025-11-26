@@ -5,6 +5,7 @@ import { LoginPage } from "./LoginPage";
 import { useState, useEffect } from "react";
 import axios from "axios";
 import ProfilePage from "./ProfilePage";
+import SingleBook from "./Book/SingleBook";
 
 function App() {
   const [user, setUser] = useState({});
@@ -79,6 +80,7 @@ function App() {
           path="profile"
           element={<ProfilePage user={user} setUser={setUser} />}
         />
+        <Route path="/singleBook/:id" element={<SingleBook books={books} />} />
       </Routes>
     </div>
   );
