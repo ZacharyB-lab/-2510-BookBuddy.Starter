@@ -9,13 +9,13 @@ import axios from "axios";
 function App() {
   const [user, setUser] = useState({});
 
-  const authenticate = async () => {
+  const authenticate = async (token) => {
     try {
       const { data } = await axios.get(
         "https://fsa-book-buddy-b6e748d1380d.herokuapp.com/api/users/me",
         {
           headers: {
-            Authorization: `Bearer ${window.localStorage.getItem("token")}`,
+            Authorization: `Bearer ${token}`,
           },
         }
       );
@@ -30,7 +30,7 @@ function App() {
   useEffect(() => {
     const logginInToken = window.localStorage.getItem("token");
     if (logginInToken) {
-      authenticate();
+      authenticate(logginInToken);
     }
   }, [user.id]);
 
@@ -41,25 +41,34 @@ function App() {
         <Link to="/">Welcome </Link>
         <div className="spacer"></div>
         <Link to="/">Books</Link>
-        <Link to="/login">Log In</Link>
+        {user.id ? (
+          <span>Logged in: {user.email}</span>
+        ) : (
+          <Link to="/login">Log In</Link>
+        )}
       </nav>
 
       <Routes>
         <Route index element={<HomePage />} />
-        <Route path="register" element={<RegisterPage />} />
+        <Route
+          path="register"
+          element={<RegisterPage authenticate={authenticate} />}
+        />
         <Route path="login" element={<LoginPage />} />
       </Routes>
     </div>
   );
 }
-//<div>
-// {user.id ? (
-//    <Welcome user={user} setUser={setUser} />
-//  ) : (
-//    <div>
-//      <h1>Please Login!</h1>
-//        <LoginForm authenticate={authenticate}/>
-//    </div>;
-//      )}
+{
+  /* <div>
+{user.id ? (
+   <Welcome user={user} setUser={setUser} />
+ ) : (
+   <div>
+     <h1>Please Login!</h1>
+       <LoginForm authenticate={authenticate}/>
+   </div>;
+     )} */
+}
 
 export default App;

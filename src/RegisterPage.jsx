@@ -1,7 +1,7 @@
 import { Link } from "react-router";
 import RegisterForm from "./RegisterForm";
 
-export function RegisterPage() {
+export function RegisterPage({ authenticate }) {
   /* Test Code
   return (
     <div>
@@ -53,7 +53,7 @@ export default function Register() {
   return (
     <div>
       <h1>Register for an account</h1>
-      <RegisterForm />
+      <RegisterForm authenticate={authenticate} />
       <Link to="/login">Already have an account? Log in here.</Link>
       {/* <form action={tryRegister}>
         <label>

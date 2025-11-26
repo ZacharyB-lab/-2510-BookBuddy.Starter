@@ -55,3 +55,8 @@ nav {
 .author {
   color: white;
 }
+
+a:link,
+a:visited {
+  color: cyan;
+}

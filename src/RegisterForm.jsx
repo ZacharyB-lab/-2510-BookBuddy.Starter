@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const RegisterForm = () => {
+const RegisterForm = ({ authenticate }) => {
   const register = async (formData) => {
     const email = formData.get("email");
     const username = formData.get("username");
@@ -15,8 +15,9 @@ const RegisterForm = () => {
         "https://fsa-book-buddy-b6e748d1380d.herokuapp.com/api/users/register",
         user
       );
-      console.log(data);
-      window.localStorage.setItem("token", data.token);
+      const token = data.token;
+      window.localStorage.setItem("token", token);
+      authenticate(token);
     } catch (error) {
       console.error(error);
     }

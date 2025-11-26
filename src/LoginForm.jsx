@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const LoginForm = (authenticate) => {
+const LoginForm = ({ authenticate }) => {
   const login = async (formData) => {
     const email = formData.get("email");
     const password = formData.get("password");
