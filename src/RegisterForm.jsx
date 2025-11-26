@@ -12,7 +12,7 @@ const RegisterForm = () => {
     };
     try {
       const { data } = await axios.post(
-        "https://fsa-book-buddy-b6e748d1380d.herokuapp.com/api/users/login",
+        "https://fsa-book-buddy-b6e748d1380d.herokuapp.com/api/users/register",
         user
       );
       console.log(data);
