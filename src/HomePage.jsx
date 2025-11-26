@@ -1,5 +1,6 @@
 import { Book } from "./Book/Book";
 import "./books.css";
+import { Link } from "react-router";
 //Link for API books: https://fsa-book-buddy-b6e748d1380d.herokuapp.com/api/books
 
 export function HomePage({ books }) {

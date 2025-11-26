@@ -8,6 +8,7 @@ import ProfilePage from "./ProfilePage";
 
 function App() {
   const [user, setUser] = useState({});
+  const [books, setBooks] = useState([]);
   const logOut = () => {
     setUser({});
     localStorage.removeItem("token");
@@ -68,7 +69,7 @@ function App() {
       </nav>
 
       <Routes>
-        <Route index element={<HomePage />} />
+        <Route index element={<HomePage books={books} />} />
         <Route
           path="register"
           element={<RegisterPage authenticate={authenticate} />}
@@ -78,7 +79,6 @@ function App() {
           path="profile"
           element={<ProfilePage user={user} setUser={setUser} />}
         />
-        <Route index element={<HomePage books={books} />} />
       </Routes>
     </div>
   );
