@@ -5,6 +5,7 @@ import { LoginPage } from "./LoginPage";
 import LoginForm from "./LoginForm";
 import { useState, useEffect } from "react";
 import axios from "axios";
+import ProfilePage from "./ProfilePage";
 
 function App() {
   const [user, setUser] = useState({});
@@ -42,7 +43,7 @@ function App() {
         <div className="spacer"></div>
         <Link to="/">Books</Link>
         {user.id ? (
-          <span>Logged in: {user.email}</span>
+          <Link to="/profile">Logged in: {user.email}</Link>
         ) : (
           <Link to="/login">Log In</Link>
         )}
@@ -55,20 +56,10 @@ function App() {
           element={<RegisterPage authenticate={authenticate} />}
         />
         <Route path="login" element={<LoginPage />} />
+        <Route path="profile" element={<ProfilePage user={user} />} />
       </Routes>
     </div>
   );
-}
-{
-  /* <div>
-{user.id ? (
-   <Welcome user={user} setUser={setUser} />
- ) : (
-   <div>
-     <h1>Please Login!</h1>
-       <LoginForm authenticate={authenticate}/>
-   </div>;
-     )} */
 }
 
 export default App;
