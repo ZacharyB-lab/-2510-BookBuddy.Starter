@@ -1,6 +1,5 @@
-import { Book } from "./Book/Book";
 import "./books.css";
-import { Link } from "react-router";
+import { Link, useNavigate } from "react-router";
 //Link for API books: https://fsa-book-buddy-b6e748d1380d.herokuapp.com/api/books
 
 export function HomePage({ books }) {
@@ -27,13 +26,18 @@ export function HomePage({ books }) {
   //     </div>
   //   </div>
   // );
+  const navigate = useNavigate();
+  const searchBooks = (formData) => {
+    const target = formData.get("search");
+    navigate(`/books/search?book=${target}`);
+  };
   return (
     <div>
       <h1>List of Books</h1>
-      <div>
-        <input placeholder="Search for a book..."></input>
-        <button>Search</button>
-      </div>
+      <form action={searchBooks}>
+        <input type="text" name="search" />
+        <button type="submit">Search</button>
+      </form>
       <div className="booksContainer">
         {books.map((book) => {
           return (

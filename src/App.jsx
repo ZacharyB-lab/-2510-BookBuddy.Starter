@@ -81,6 +81,7 @@ function App() {
           element={<ProfilePage user={user} setUser={setUser} />}
         />
         <Route path="/singleBook/:id" element={<SingleBook books={books} />} />
+        {/* <Route path="/books/search/?" element={<SearchBook books={books} />} /> */}
       </Routes>
     </div>
   );
