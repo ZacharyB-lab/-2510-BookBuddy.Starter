@@ -24,10 +24,11 @@ export function LoginPage() {
       </div>
     </div>
   ); */
-  <div>
-    <LoginForm />
-  </div>;
-  <div>
-    <Link to="/register">Need an account? Register here</Link>
-  </div>;
+  return (
+    <div>
+      <h1>Log in</h1>
+      <LoginForm />
+      <Link to="/register">Need an account? Register here</Link>
+    </div>
+  );
 }

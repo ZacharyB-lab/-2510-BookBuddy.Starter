@@ -28,7 +28,10 @@ function App() {
   };
 
   useEffect(() => {
-    authenticate();
+    const logginInToken = window.localStorage.getItem("token");
+    if (logginInToken) {
+      authenticate();
+    }
   }, [user.id]);
 
   return (
@@ -46,10 +49,6 @@ function App() {
         <Route path="register" element={<RegisterPage />} />
         <Route path="login" element={<LoginPage />} />
       </Routes>
-
-      <div>
-        <LoginForm />
-      </div>
     </div>
   );
 }
@@ -59,7 +58,7 @@ function App() {
 //  ) : (
 //    <div>
 //      <h1>Please Login!</h1>
-//        <LoginForm/>
+//        <LoginForm authenticate={authenticate}/>
 //    </div>;
 //      )}
 

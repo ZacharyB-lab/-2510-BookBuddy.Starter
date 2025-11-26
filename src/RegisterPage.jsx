@@ -51,9 +51,11 @@ export default function Register() {
     }
   };*/
   return (
-    <>
+    <div>
       <h1>Register for an account</h1>
-      <form action={tryRegister}>
+      <RegisterForm />
+      <Link to="/login">Already have an account? Log in here.</Link>
+      {/* <form action={tryRegister}>
         <label>
           Username
           <input type="text" name="username" required />
@@ -64,8 +66,7 @@ export default function Register() {
         </label>
         <button>Register</button>
         {error && <p role="alert">{error}</p>}
-      </form>
-    </>
+      </form> */}
+    </div>
   );
 }
-//<Link to="/login">Already have an account? Log in here.</Link>
