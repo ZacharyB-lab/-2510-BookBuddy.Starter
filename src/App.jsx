@@ -2,16 +2,24 @@ import { Route, Routes, Link } from "react-router";
 import { HomePage } from "./HomePage";
 import { RegisterPage } from "./RegisterPage";
 import { LoginPage } from "./LoginPage";
-import LoginForm from "./LoginForm";
 import { useState, useEffect } from "react";
 import axios from "axios";
 import ProfilePage from "./ProfilePage";
 
 function App() {
   const [user, setUser] = useState({});
+  const logOut = () => {
+    setUser({});
+    localStorage.removeItem("token");
+    <ProfilePage logOut={logOut} />;
+  };
 
   const authenticate = async (token) => {
     try {
+      const token = window.localStorage.getItem("token");
+      if (!token) {
+        throw new Error("No token found");
+      }
       const { data } = await axios.get(
         "https://fsa-book-buddy-b6e748d1380d.herokuapp.com/api/users/me",
         {

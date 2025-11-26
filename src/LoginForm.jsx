@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const LoginForm = ({ authenticate }) => {
+const LoginForm = (authenticate) => {
   const login = async (formData) => {
     const email = formData.get("email");
     const password = formData.get("password");
@@ -15,7 +15,7 @@ const LoginForm = ({ authenticate }) => {
       );
       console.log(data);
       window.localStorage.setItem("token", data.token);
-      authenticate(window.localStorage.getItem("token"));
+      //authenticate(window.localStorage.getItem("token"));
     } catch (error) {
       console.error(error);
     }
