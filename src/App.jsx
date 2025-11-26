@@ -64,7 +64,10 @@ function App() {
           element={<RegisterPage authenticate={authenticate} />}
         />
         <Route path="login" element={<LoginPage />} />
-        <Route path="profile" element={<ProfilePage user={user} />} />
+        <Route
+          path="profile"
+          element={<ProfilePage user={user} setUser={setUser} />}
+        />
       </Routes>
     </div>
   );
