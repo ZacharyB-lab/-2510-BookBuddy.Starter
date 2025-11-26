@@ -43,6 +43,16 @@ function App() {
     }
   }, [user.id]);
 
+  useEffect(() => {
+    const fetchAllBooks = async () => {
+      const { data } = await axios.get(
+        "https://fsa-book-buddy-b6e748d1380d.herokuapp.com/api/books"
+      );
+      setBooks(data);
+    };
+    fetchAllBooks();
+  }, []);
+
   return (
     <div className="app">
       <nav>
@@ -68,6 +78,7 @@ function App() {
           path="profile"
           element={<ProfilePage user={user} setUser={setUser} />}
         />
+        <Route index element={<HomePage books={books} />} />
       </Routes>
     </div>
   );
